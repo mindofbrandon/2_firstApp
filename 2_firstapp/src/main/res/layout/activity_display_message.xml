@@ -7,6 +7,18 @@
     tools:context=".DisplayMessageActivity">
 
     <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginEnd="130dp"
+        android:text="My name is Brandon Zuniga"
+        app:layout_constraintBottom_toTopOf="@+id/selfPortrait"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
         android:id="@+id/displayFirstName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

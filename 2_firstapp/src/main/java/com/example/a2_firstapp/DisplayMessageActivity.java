@@ -30,20 +30,5 @@ public class DisplayMessageActivity extends AppCompatActivity {
         displayFirstName.setText(data1);
         displayLastName.setText(data2);
 
-        /**
-        // Get the Intent that started this activity and extract the string
-        Intent intent = getIntent();
-
-        String firstMessage = intent.getStringExtra(MainActivity.EXTRA_MESSAGE); // now fix this
-        String lastMessage = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-
-        // Capture the layout's TextView and set the string as its text
-        TextView displayFirstName = findViewById(R.id.displayFirstName);
-        displayFirstName.setText(firstMessage);
-
-        TextView displayLastName = findViewById(R.id.displayLastName);
-        displayLastName.setText(lastMessage);
-         */
-
     }
 }
