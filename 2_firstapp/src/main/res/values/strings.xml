@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">2_firstApp</string>
+    <string name="edit_firstname">Enter first name</string>
+    <string name="edit_lastname">Enter last name</string>
+    <string name="button_send">Send</string>
+
+</resources>
