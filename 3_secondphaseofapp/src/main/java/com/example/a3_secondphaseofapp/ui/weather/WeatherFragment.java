@@ -1,38 +1,44 @@
 package com.example.a3_secondphaseofapp.ui.weather;
 
-import androidx.lifecycle.ViewModelProvider;
-
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.TextView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import com.example.a3_secondphaseofapp.R;
+import com.example.a3_secondphaseofapp.databinding.FragmentWeatherBinding;
 
 public class WeatherFragment extends Fragment {
 
-    private WeatherViewModel mViewModel;
+    private WeatherViewModel weatherViewModel;
+    private FragmentWeatherBinding binding;
 
-    public static WeatherFragment newInstance() {
-        return new WeatherFragment();
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        weatherViewModel =
+                new ViewModelProvider(this).get(WeatherViewModel.class);
+
+        binding = FragmentWeatherBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+
+        final TextView textView = binding.textWeather;
+        weatherViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String s) {
+                textView.setText(s);
+            }
+        });
+        return root;
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_weather, container, false);
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(WeatherViewModel.class);
-        // TODO: Use the ViewModel
-    }
-
 }
