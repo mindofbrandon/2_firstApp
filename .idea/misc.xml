@@ -3,6 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Brandon Zuniga/AndroidStudioProjects/2_firstApp/2_firstapp/src/main/res/layout/activity_display_message.xml" value="0.55" />
+        <entry key="..\:/Users/Brandon Zuniga/AndroidStudioProjects/2_firstApp/2_firstapp/src/main/res/layout/activity_main.xml" value="0.4746376811594203" />
+        <entry key="..\:/Users/Brandon Zuniga/AndroidStudioProjects/2_firstApp/2_firstapp/src/main/res/layout/activity_portfolio.xml" value="0.335" />
+        <entry key="..\:/Users/Brandon Zuniga/AndroidStudioProjects/2_firstApp/2_firstapp/src/main/res/layout/fragment_dashboard.xml" value="0.2796875" />
+        <entry key="..\:/Users/Brandon Zuniga/AndroidStudioProjects/2_firstApp/2_firstapp/src/main/res/layout/fragment_home.xml" value="0.2796875" />
+        <entry key="..\:/Users/Brandon Zuniga/AndroidStudioProjects/2_firstApp/2_firstapp/src/main/res/layout/fragment_notifications.xml" value="0.2796875" />
+        <entry key="..\:/Users/Brandon Zuniga/AndroidStudioProjects/2_firstApp/3_secondphaseofapp/src/main/res/layout/activity_main.xml" value="0.2796875" />
+        <entry key="..\:/Users/Brandon Zuniga/AndroidStudioProjects/2_firstApp/3_secondphaseofapp/src/main/res/layout/fragment_dashboard.xml" value="0.335" />
+        <entry key="..\:/Users/Brandon Zuniga/AndroidStudioProjects/2_firstApp/3_secondphaseofapp/src/main/res/layout/fragment_home.xml" value="0.2796875" />
         <entry key="..\:/Users/Brandon Zuniga/AndroidStudioProjects/MyApplication/2_firstapp/src/main/res/layout/activity_display_message.xml" value="0.45" />
       </map>
     </option>

@@ -3,5 +3,9 @@
     <string name="edit_firstname">Enter first name</string>
     <string name="edit_lastname">Enter last name</string>
     <string name="button_send">Send</string>
+    <string name="title_activity_portfolio">Portfolio</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 
 </resources>
