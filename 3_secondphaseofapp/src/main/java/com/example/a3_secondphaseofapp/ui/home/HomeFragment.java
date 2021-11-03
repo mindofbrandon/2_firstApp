@@ -15,6 +15,11 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.a3_secondphaseofapp.R;
 import com.example.a3_secondphaseofapp.databinding.FragmentHomeBinding;
 
@@ -62,21 +67,16 @@ public class HomeFragment extends Fragment {
                 navController.navigate(R.id.action_navigation_home_to_weatherFragment);
             }
         });
-
-
     }
 
+    // use locations inputted to get data from accuweather through API
+
+    String url = "https://developer.accuweather.com/accuweather-locations-api/apis/get/locations/v1/cities/autocomplete?apikey=i6ea0ysImG3m0bT7WGySpmYdXHrqhHgy&q=";
+    String query = "";
 
 
-    /*
-    @Override
-    public void onClick(View view) {
-        float amount = 1;
-        action =
-                HomeFragmentDirections.actionNavigationHomeToWeatherFragment(amount);
+    // Instantiate the RequestQueue.
 
-        Navigation.findNavController(view).navigate(action);
-    }
-*/
+
 
 }
