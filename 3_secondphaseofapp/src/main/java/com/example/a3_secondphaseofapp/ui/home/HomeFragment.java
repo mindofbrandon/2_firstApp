@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
 import com.android.volley.Request;
@@ -53,7 +55,7 @@ public class HomeFragment extends Fragment {
         binding = null;
     }
 
-    // After locations are entered, new fragment will load
+    //region After locations are entered, new fragment will load on button click
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -65,10 +67,26 @@ public class HomeFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_navigation_home_to_weatherFragment);
+
+                // when user taps on button, take data from edit text and pass to next fragment
+                //EditText bornData = view.findViewById(R.id.editTextBornLocation);
+                EditText bornData = (EditText) getView().findViewById(R.id.editTextBornLocation);
+                int amount = Integer.parseInt(bornData.getText().toString());
+
+                //ConfirmationAction action = speci
+
+
+                EditText currData = view.findViewById(R.id.editTextCurrentLocation);
+                EditText famData = view.findViewById(R.id.editTextFamilyLocation);
+                EditText dreamData = view.findViewById(R.id.editTextDreamLocation);
+
+                // create navdirection object
+                //NavDirections action =
+
+                navController.navigate(R.id.action_navigation_home_to_weatherFragment); // navigate to next fragment
             }
         });
-
+    //endregion
         //region Use locations inputted to get data from accuweather through API
 
         final TextView textView = (TextView) getView().findViewById(R.id.text);
@@ -96,7 +114,7 @@ public class HomeFragment extends Fragment {
 // Add the request to the RequestQueue.
 //queue.add(stringRequest);
 
-//endregion
+    //endregion
 
 
     }
