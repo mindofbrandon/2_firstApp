@@ -18,6 +18,7 @@ import androidx.navigation.Navigation;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.a3_secondphaseofapp.R;
@@ -67,15 +68,38 @@ public class HomeFragment extends Fragment {
                 navController.navigate(R.id.action_navigation_home_to_weatherFragment);
             }
         });
+
+        //region Use locations inputted to get data from accuweather through API
+
+        final TextView textView = (TextView) getView().findViewById(R.id.text);
+
+        // Instantiate the RequestQueue.
+        RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
+        String url = "https://developer.accuweather.com/accuweather-locations-api/apis/get/locations/v1/cities/autocomplete?apikey=i6ea0ysImG3m0bT7WGySpmYdXHrqhHgy&q=";
+        String query = "";
+
+        // Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        // Display the first 500 characters of the response string.
+                        textView.setText("Response is: "+ response.substring(0,500));
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                textView.setText("That didn't work!");
+            }
+        });
+
+// Add the request to the RequestQueue.
+//queue.add(stringRequest);
+
+//endregion
+
+
     }
-
-    // use locations inputted to get data from accuweather through API
-
-    String url = "https://developer.accuweather.com/accuweather-locations-api/apis/get/locations/v1/cities/autocomplete?apikey=i6ea0ysImG3m0bT7WGySpmYdXHrqhHgy&q=";
-    String query = "";
-
-
-    // Instantiate the RequestQueue.
 
 
 
