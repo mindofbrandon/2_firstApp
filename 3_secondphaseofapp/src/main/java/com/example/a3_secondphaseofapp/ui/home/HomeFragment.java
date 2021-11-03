@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.example.a3_secondphaseofapp.R;
@@ -46,7 +48,27 @@ public class HomeFragment extends Fragment {
     }
 
     // After locations are entered, new fragment will load
-/*
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        Button button = view.findViewById(R.id.Send);
+
+        NavController navController = Navigation.findNavController(view);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.action_navigation_home_to_weatherFragment);
+            }
+        });
+
+
+    }
+
+
+
+    /*
     @Override
     public void onClick(View view) {
         float amount = 1;
