@@ -68,25 +68,22 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                // when user taps on button, take data from edit text and pass to next fragment
                 //EditText bornData = view.findViewById(R.id.editTextBornLocation);
-                EditText bornData = (EditText) getView().findViewById(R.id.editTextBornLocation);
-                int amount = Integer.parseInt(bornData.getText().toString());
+                //EditText currData = view.findViewById(R.id.editTextCurrentLocation);
+                //EditText famData = view.findViewById(R.id.editTextFamilyLocation);
+                //EditText dreamData = view.findViewById(R.id.editTextDreamLocation);
 
-                //ConfirmationAction action = speci
+                NavDirections action = HomeFragmentDirections.actionNavigationHomeToNavigationWeather();
+
+                navController.navigate(action); // navigate to next fragment
 
 
-                EditText currData = view.findViewById(R.id.editTextCurrentLocation);
-                EditText famData = view.findViewById(R.id.editTextFamilyLocation);
-                EditText dreamData = view.findViewById(R.id.editTextDreamLocation);
 
-                // create navdirection object
-                //NavDirections action =
 
-                navController.navigate(R.id.action_navigation_home_to_weatherFragment); // navigate to next fragment
             }
         });
     //endregion
+
         //region Use locations inputted to get data from accuweather through API
 
         final TextView textView = (TextView) getView().findViewById(R.id.text);

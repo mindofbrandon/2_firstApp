@@ -11,8 +11,8 @@
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_navigation_home_to_weatherFragment"
-            app:destination="@id/weatherFragment" />
+            android:id="@+id/action_navigation_home_to_navigation_weather"
+            app:destination="@id/navigation_weather" />
     </fragment>
 
     <fragment
@@ -28,28 +28,25 @@
         tools:layout="@layout/fragment_notifications" />
 
     <fragment
-        android:id="@+id/weatherFragment"
+        android:id="@+id/navigation_weather"
         android:name="com.example.a3_secondphaseofapp.ui.weather.WeatherFragment"
-        android:label="WeatherFragment"
-        tools:layout="@layout/fragment_weather" >
+        android:label="@string/title_weather"
+        tools:layout="@layout/fragment_weather">
         <argument
             android:name="bornLoc"
-            app:argType="string"
-            android:defaultValue="Cambridge" />
+            android:defaultValue="Cambridge"
+            app:argType="string" />
         <argument
             android:name="currLoc"
-            app:argType="string"
-            android:defaultValue="Lowell" />
+            android:defaultValue="Lowell"
+            app:argType="string" />
         <argument
             android:name="dreamLoc"
-            app:argType="string"
-            android:defaultValue="Honolulu" />
+            android:defaultValue="Honolulu"
+            app:argType="string" />
         <argument
             android:name="famLoc"
-            app:argType="string"
-            android:defaultValue="Guatemala City" />
-        <argument
-            android:name="testLoc"
+            android:defaultValue="Guatemala City"
             app:argType="string" />
     </fragment>
 </navigation>
